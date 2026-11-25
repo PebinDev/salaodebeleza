@@ -233,6 +233,9 @@
   .container { width: calc(100% - 2rem); }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-copy { padding: 1.5rem 0.25rem 1.125rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-actions > .button { max-width: 100%; }
+  .hero-contact-link { flex: 0 0 auto; width: max-content; max-width: 100%; justify-content: flex-start; }
   .hero h1 { font-size: 2.25rem; }
   .hero-copy > p:not(.eyebrow) { max-width: 24.375rem; font-size: 0.75rem; }
   .hero-image { position: relative; inset: auto; right: auto; width: 100%; aspect-ratio: 1.8 / 1; }
