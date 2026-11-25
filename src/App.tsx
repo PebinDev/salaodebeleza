@@ -190,7 +190,7 @@ function App() {
   const { scrollYProgress } = useScroll()
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 90, damping: 28, restDelta: 0.001 })
   const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start end', 'end start'] })
-  const heroParallax = useTransform(heroProgress, [0, 1], ['-3%', '3%'])
+  const heroParallax = useTransform(heroProgress, [0, 1], ['0%', '3%'])
   const { scrollYProgress: aboutProgress } = useScroll({ target: aboutRef, offset: ['start end', 'end start'] })
   const aboutImageY = useSpring(useTransform(aboutProgress, [0, 1], ['-.3rem', '.3rem']), { stiffness: 80, damping: 24, restDelta: 0.001 })
   const { scrollYProgress: servicesProgress } = useScroll({ target: servicesRef, offset: ['start end', 'end start'] })
