@@ -1,0 +1,274 @@
+:root {
+  --ivory: #f8f4ef;
+  --sand: #eadccd;
+  --taupe: #a9825f;
+  --brown: #594332;
+  --charcoal: #29221d;
+  --gold: #c99a36;
+  --rose: #d9c4b2;
+}
+
+.container { position: relative; left: 50%; translate: -50% 0; width: min(67.5rem, calc(100% - 3rem)); }
+.header { height: 4.25rem; position: sticky; top: 0; z-index: 30; background: rgba(248,244,239,.97); border-bottom: 0.0625rem solid #dfd2c5; backdrop-filter: blur(0.625rem); }
+.scroll-progress { position: fixed; inset: 0 0 auto; z-index: 100; height: .125rem; transform-origin: 0 50%; pointer-events: none; background: linear-gradient(90deg, #a9825f, #c99a36); }
+.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.logo { display: flex; align-items: center; gap: 0.5rem; min-width: 10.625rem; color: var(--charcoal); text-decoration: none; }
+.logo-mark, .logo-mark svg { width: 2.375rem; height: 2.375rem; }
+.logo-mark { display: grid; place-items: center; color: var(--taupe); }
+.logo-copy { display: flex; flex-direction: column; gap: .1875rem; line-height: 1; }
+.logo-copy strong { font: 600 1.8125rem/1 "Cormorant Garamond", Georgia, serif; }
+.logo-copy small { font-size: 0.4375rem; letter-spacing: .028rem; font-weight: 700; }
+.nav { flex: 1; display: flex; align-items: center; justify-content: center; gap: 1.75rem; }
+.nav a { color: var(--charcoal); text-decoration: none; font-size: 0.8125rem; font-weight: 600; padding: 1.5625rem 0 1.3125rem; border-bottom: 0.125rem solid transparent; transition: color .25s ease, border-color .25s ease; }
+.nav a.active, .nav a:hover { border-color: var(--brown); }
+.menu-button { display: none; }
+.button { min-height: 2.625rem; border: 0.0625rem solid transparent; border-radius: 0.5rem; padding: 0 1.125rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5625rem; text-decoration: none; font-size: 0.8125rem; font-weight: 600; white-space: nowrap; cursor: pointer; transition: color .25s ease, background-color .25s ease, border-color .25s ease, transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease; }
+.button svg { width: 1rem; height: 1rem; }
+.button svg, .service-card button svg, .team-card button svg { transition: transform .25s cubic-bezier(.2,.8,.2,1); }
+.button:hover svg, .service-card button:hover svg, .team-card button:hover svg { transform: translateX(.1875rem); }
+.button:focus-visible, .service-card button:focus-visible, .team-card button:focus-visible, .nav a:focus-visible, .social-links a:focus-visible { outline: .125rem solid var(--gold); outline-offset: .1875rem; }
+.button-brown { color: white; background: var(--brown); }
+.button-brown:hover { background: #493829; transform: translateY(-0.1875rem); box-shadow: 0 .625rem 1.25rem rgba(70,48,31,.24); }
+.button-outline { color: var(--brown); border-color: var(--brown); background: transparent; }
+.button-outline:hover { background: rgba(89,67,50,.07); }
+.button-white { color: var(--charcoal); background: white; }
+.hero { overflow: hidden; background: radial-gradient(ellipse at 76% 54%, rgba(188,137,96,.2) 0%, rgba(188,137,96,.08) 32%, transparent 62%), linear-gradient(112deg,#f5ece3 0%,#f1e4d8 48%,#ead9c8 100%); }
+.hero-grid { position: relative; display: grid; grid-template-columns: 45% 55%; align-items: stretch; }
+.hero-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: .625rem; padding: 2.5rem 2.125rem 2.5rem 1.25rem; }
+.eyebrow { color: var(--brown); font-size: 0.625rem; font-weight: 700; letter-spacing: 0.0813rem; }
+.hero h1, h2 { color: var(--charcoal); font-family: "Cormorant Garamond", Georgia, serif; }
+.hero h1 { font-size: clamp(2.375rem, 4vw, 3.375rem); line-height: .94; font-weight: 600; }
+.hero-title-mask { display: block; overflow: hidden; padding-block: .045em; }
+.hero-title-mask > span { display: block; will-change: transform, filter, opacity; }
+.hero-copy > p:not(.eyebrow) { max-width: 25.625rem; font-size: 0.9375rem; line-height: 1.55; }
+.hero-copy > p strong { color: #4a3528; font-weight: 700; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.625rem; }
+.hero-contact-link { flex-basis: 100%; width: max-content; display: inline-flex; align-items: center; gap: .25rem; color: var(--brown); font-size: .75rem; font-weight: 700; text-decoration: none; }
+.hero-contact-link svg { width: .875rem; height: .875rem; transition: transform .25s ease; }
+.hero-contact-link:hover { text-decoration: underline; text-underline-offset: .2rem; }
+.hero-contact-link:hover svg { transform: translateX(.25rem); }
+.hero-image { position: absolute; inset-block: 0; right: 0; width: 55%; overflow: hidden; isolation: isolate; }
+.hero-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.differentials { background: #f6eee6; border-bottom: 0.0625rem solid #eee5dc; }
+.differential-grid { min-height: 5.375rem; display: grid; grid-template-columns: repeat(4,1fr); align-items: center; }
+.differential-grid div { display: flex; align-items: center; justify-content: center; gap: 0.625rem; text-align: left; font-size: 0.75rem; line-height: 1.25; }
+.differential-grid svg { width: 1.4375rem; height: 1.4375rem; color: #78563d; stroke-width: 1.5; }
+.differential-grid svg { transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+.differential-grid div:hover svg { transform: translateY(-.125rem) rotate(-4deg); }
+.section { padding: 2.125rem 0; }
+.about-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 2rem; }
+.about-image-frame { display: block; width: 100%; height: 16.25rem; overflow: hidden; border-radius: 0.75rem; }
+.about-image-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.about-copy { max-width: 26.875rem; display: flex; flex-direction: column; gap: .5rem; }
+.about-copy h2, .section-heading h2 { font-size: 2.375rem; line-height: .98; font-weight: 600; }
+.about-copy > p:not(.eyebrow) { font-size: 0.875rem; line-height: 1.5; }
+.section-heading { display: flex; flex-direction: column; align-items: center; gap: .5rem; text-align: center; }
+.section-heading p { font-size: 0.8125rem; }
+.services { padding-top: 0.75rem; }
+.service-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin-top: 1.25rem; perspective: 65rem; }
+.service-card { position: relative; height: 10.625rem; overflow: hidden; border-radius: 0.625rem; background: var(--sand); will-change: transform, opacity; }
+.service-card img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .65s cubic-bezier(.16,1,.3,1), filter .65s ease; }
+.service-card:hover img { transform: scale(1.035); filter: saturate(1.03); }
+.service-card button, .team-card button { position: absolute; inset-inline: 0; bottom: 0; width: 100%; min-height: 2.75rem; border: 0; display: flex; align-items: center; justify-content: space-between; padding: 0.4375rem 0.75rem; color: var(--charcoal); background: rgba(248,244,239,.96); cursor: pointer; text-align: left; }
+.service-card button span, .team-card button span { display: flex; flex-direction: column; }
+.service-card button strong { font: 600 1.25rem/1 "Cormorant Garamond", Georgia, serif; }
+.service-card button small { display: none; }
+.service-card button svg, .team-card button svg { width: 1.0625rem; height: 1.0625rem; flex: 0 0 auto; }
+.team { padding-top: 1.125rem; }
+.team-grid { position: relative; left: 50%; translate: -50% 0; width: min(53.125rem,100%); display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; perspective: 65rem; }
+.team-card { position: relative; height: 11.25rem; overflow: hidden; border-radius: 0.625rem; background: var(--rose); will-change: transform, opacity; }
+.team-card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+.team-card img { transition: transform .7s cubic-bezier(.16,1,.3,1), filter .7s ease; }
+.team-card:hover img { transform: scale(1.035); filter: saturate(1.03); }
+.team-card button { min-height: 3rem; padding: 0.375rem 0.75rem; }
+.team-card button strong { font-size: 0.75rem; }
+.team-card button small { color: #655d55; font-size: 0.625rem; }
+.team-card button { transition: background-color .25s ease; }
+.team-card:hover button, .service-card:hover button { background: rgba(255,255,255,.98); }
+.testimonial { padding: 0 0 1.125rem; }
+.testimonial-card { height: 10rem; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; border-radius: 0.75rem; background: #eee1d3; }
+.testimonial-copy { align-self: center; display: flex; flex-direction: column; gap: .375rem; padding: .875rem clamp(1rem,3vw,2rem); }
+.stars { color: var(--gold); letter-spacing: 0.125rem; font-size: 0.875rem; }
+.testimonial blockquote { font: 600 1.3125rem/1.08 "Cormorant Garamond", Georgia, serif; }
+.testimonial-copy p { font-size: 0.625rem; line-height: 1.4; }
+.testimonial-card > img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; }
+.booking-banner { padding-bottom: 1.125rem; }
+.booking-banner-inner { min-height: 4.625rem; padding: 0.75rem 1.375rem; display: flex; align-items: center; gap: 1rem; border-radius: 0.75rem; color: white; background: var(--brown); transition: box-shadow .35s ease, transform .35s ease; }
+.booking-banner-inner:hover { transform: translateY(-.125rem); box-shadow: 0 .75rem 1.75rem rgba(89,67,50,.16); }
+.booking-banner-inner > svg { width: 2rem; height: 2rem; flex: 0 0 auto; stroke-width: 1.4; }
+.booking-banner-inner div { flex: 1; display: flex; flex-direction: column; gap: .1875rem; }
+.booking-banner-inner h2 { color: white; font-size: 1.75rem; line-height: 1; }
+.booking-banner-inner p { font-size: 0.75rem; }
+.contact { display: flex; flex-direction: column; gap: .875rem; padding: 1.375rem 0 0.625rem; background: var(--ivory); }
+.contact-grid { display: grid; grid-template-columns: 1.1fr .65fr 1.2fr 1.2fr auto; gap: 1.5rem; align-items: start; }
+.contact-grid > div { display: flex; flex-direction: column; align-items: flex-start; gap: .3125rem; }
+.contact-grid h3 { font: 600 1.0625rem/1.1 "Cormorant Garamond", Georgia, serif; }
+.contact-grid a, .contact-grid p { display: flex; align-items: center; gap: 0.375rem; color: var(--charcoal); font-size: 0.625rem; line-height: 1.35; text-decoration: none; }
+.contact-grid a:hover { text-decoration: underline; }
+.contact-grid svg { width: 0.8125rem; height: 0.8125rem; flex: 0 0 auto; }
+.footer-brand .logo { min-width: 0; }
+.footer-brand > p { font-size: 0.5rem; letter-spacing: .025rem; }
+.contact-grid > .social-links { flex-direction: row; justify-self: end; align-items: center; }
+.social-links { display: flex; gap: 0.75rem; padding-top: 0.5rem; }
+.social-links a { display: grid; place-items: center; }
+.social-links a { transition: color .25s ease, transform .25s ease; }
+.social-links a:hover { color: var(--taupe); transform: translateY(-.125rem); }
+.social-links span { font-size: 1.125rem; }
+.copyright { padding-top: 0.5rem; border-top: 0.0625rem solid rgba(89,67,50,.13); text-align: center; font-size: 0.5625rem; }
+.whatsapp-float { position: fixed; right: 1.125rem; bottom: 1.125rem; z-index: 25; width: 3rem; height: 3rem; border: 0; border-radius: 50%; display: grid; place-items: center; color: white; background: #5b9b78; box-shadow: 0 0.5rem 1.5rem rgba(89,67,50,.25); cursor: pointer; }
+.whatsapp-float { transition: transform .25s ease, box-shadow .25s ease; }
+.whatsapp-float:hover { transform: translateY(-.1875rem); box-shadow: 0 .75rem 1.75rem rgba(89,67,50,.3); }
+.button:active, .service-card button:active, .team-card button:active { transform: scale(.985); }
+.dialog-overlay { position: fixed; inset: 0; z-index: 40; background: rgba(41,37,32,.48); backdrop-filter: blur(0.25rem); }
+.dialog-content { position: fixed; z-index: 41; left: 50%; top: 50%; transform: translate(-50%,-50%); width: min(42.5rem,calc(100% - 2rem)); max-height: calc(100vh - 2rem); overflow: auto; display: flex; flex-direction: column; gap: .875rem; padding: 1.5rem; border-radius: 0.75rem; background: var(--ivory); box-shadow: 0 1.25rem 3.75rem rgba(41,37,32,.25); }
+.dialog-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.dialog-header > div { display: flex; flex-direction: column; gap: .5rem; }
+.dialog-header h2 { font: 600 2.125rem/1 "Cormorant Garamond", Georgia, serif; }
+.icon-button { width: 2.375rem; height: 2.375rem; flex: 0 0 auto; border: 0.0625rem solid #d9cdbb; border-radius: 50%; display: grid; place-items: center; background: white; cursor: pointer; }
+.icon-button svg { width: 1.125rem; }
+.dialog-description { font-size: 0.8125rem; }
+.form-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0.875rem; }
+.form-grid label { display: flex; flex-direction: column; gap: 0.375rem; font-size: 0.75rem; font-weight: 600; }
+.form-grid input, .form-grid select { width: 100%; height: 2.75rem; padding: 0 0.75rem; border: 0.0625rem solid #d9cdbb; border-radius: 0.5rem; outline: none; color: var(--charcoal); background: white; }
+.form-grid input:focus, .form-grid select:focus { border-color: var(--brown); box-shadow: 0 0 0 0.1875rem rgba(89,67,50,.1); }
+.form-grid small { color: #9a3e32; font-size: 0.625rem; }
+.booking-error { color: #9a3e32; font-size: 0.75rem; line-height: 1.4; }
+.booking-submit { width: 100%; }
+.booking-success { min-height: 16.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; text-align: center; }
+.booking-success > span { width: 3.625rem; height: 3.625rem; border-radius: 50%; display: grid; place-items: center; background: var(--sand); }
+.booking-success h3 { font: 600 1.75rem "Cormorant Garamond", Georgia, serif; }
+.booking-success p { max-width: 26.25rem; font-size: 0.8125rem; }
+.booking-form { display: flex; flex-direction: column; gap: 1.125rem; }
+
+@media (max-width: 51.25rem) {
+  .container { width: min(100% - 2.25rem,42.5rem); }
+  .header { height: 3.875rem; }
+  .logo { min-width: 0; }
+  .header-button { display: none; }
+  .menu-button { width: 2.625rem; height: 2.625rem; display: grid; place-items: center; border: 0; color: var(--charcoal); background: transparent; }
+  .nav { display: none; position: absolute; top: 3.875rem; left: 0; right: 0; padding: 0.5rem 1.125rem 1rem; flex-direction: column; align-items: stretch; gap: 0; background: var(--ivory); border-bottom: 0.0625rem solid #dfd2c5; }
+  .nav-open { display: flex; }
+  .nav a { padding: 0.75rem 0.5rem; border-bottom: 0.0625rem solid #eee5dc; }
+  .hero-copy { padding: 2.375rem 1.5rem 2.375rem 0.25rem; }
+  .about-grid { gap: 1.375rem; }
+  .about-image-frame { height: 13.75rem; }
+  .contact-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.125rem; }
+  .footer-brand { grid-row: span 2; }
+}
+@media (min-width: 35.0625rem) and (max-width: 51.25rem) {
+  .container { width: calc(100% - 3.5rem); }
+  .header { height: 2.5rem; }
+  .header-inner { gap: 0.625rem; }
+  .logo { min-width: 7rem; gap: 0.25rem; }
+  .logo-mark, .logo-mark svg { width: 1.75rem; height: 1.75rem; }
+  .logo-copy strong { font-size: 1.25rem; }
+  .logo-copy small { font-size: 0.3125rem; }
+  .menu-button { display: none; }
+  .header-button { display: inline-flex; min-height: 1.5rem; padding-inline: 0.5rem; gap: 0.25rem; font-size: 0.4375rem; }
+  .header-button svg { width: 0.6875rem; height: 0.6875rem; }
+  .nav { display: flex; position: static; flex-direction: row; align-items: center; justify-content: center; gap: clamp(0.75rem,3vw,1.5rem); padding: 0; border: 0; background: transparent; }
+  .nav a { padding: 0.875rem 0 0.6875rem; font-size: 0.5rem; border-bottom: 0.0625rem solid transparent; }
+  .hero-grid { grid-template-columns: 45% 55%; }
+  .hero-copy { padding: 1.75rem 0.875rem 1.75rem 0.9375rem; gap: .5rem; }
+  .hero .eyebrow { font-size: 0.4375rem; }
+  .hero h1 { font-size: clamp(1.6875rem,5.5vw,2.125rem); }
+  .hero-copy > p:not(.eyebrow) { max-width: 14.375rem; font-size: 0.5rem; line-height: 1.4; }
+  .hero-actions { gap: 0.4375rem; }
+  .hero-actions .button { min-height: 1.6875rem; padding: 0 0.5625rem; gap: 0.25rem; font-size: 0.4375rem; }
+  .hero-actions .button svg { width: 0.6875rem; height: 0.6875rem; }
+  .hero-contact-link { font-size: .5rem; }
+  .hero-contact-link svg { width: .625rem; height: .625rem; }
+  .differential-grid { min-height: 3.75rem; grid-template-columns: repeat(4,minmax(0,1fr)); padding: 0; }
+  .differential-grid div { min-height: 3.75rem; flex-direction: column; gap: 0.1875rem; text-align: center; font-size: 0.5rem; }
+  .differential-grid svg { width: 1rem; height: 1rem; }
+  .section { padding: 0.8125rem 0; }
+  .about-grid { min-height: 9.25rem; grid-template-columns: 1.2fr .9fr; gap: 1.125rem; }
+  .about-image-frame { height: 8.75rem; }
+  .about-copy { text-align: left; }
+  .about-copy .eyebrow { font-size: 0.4375rem; }
+  .about-copy h2, .section-heading h2 { font-size: 1.4375rem; }
+  .about-copy > p:not(.eyebrow) { font-size: 0.5rem; line-height: 1.3; }
+  .about-copy .button { min-height: 1.4375rem; padding-inline: 0.5625rem; font-size: 0.4375rem; }
+  .services { padding-top: 0; }
+.section-heading { gap: .35rem; }
+  .section-heading p { font-size: 0.5rem; }
+  .service-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 0.5625rem; }
+  .service-card { height: 5.25rem; }
+  .service-card button { min-height: 1.625rem; padding: 0.25rem 0.4375rem; }
+  .service-card button strong { font-size: 0.8125rem; }
+  .service-card button svg { width: 0.75rem; height: 0.75rem; }
+  .team { padding-top: 0; padding-bottom: 0.75rem; }
+  .team-grid { width: min(30rem,100%); grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0.5625rem; }
+  .team-card { height: 6.25rem; }
+  .team-card button { min-height: 1.75rem; padding: 0.1875rem 0.375rem; }
+  .team-card button strong { font-size: 0.5rem; }
+  .team-card button small { font-size: 0.375rem; }
+  .team-card button svg { width: 0.75rem; height: 0.75rem; }
+  .team .section-heading { gap: .3rem; }
+  .testimonial { padding-bottom: 0.5rem; }
+  .testimonial-card { height: 6.75rem; grid-template-columns: 1fr 1fr; }
+  .testimonial-copy { padding: .375rem .875rem; text-align: left; }
+  .stars { font-size: 0.5625rem; }
+  .testimonial blockquote { font-size: 0.75rem; }
+  .testimonial-copy p { font-size: 0.375rem; }
+  .testimonial-card > img { min-height: 0; height: 100%; }
+  .booking-banner { padding-bottom: 0.4375rem; }
+  .booking-banner-inner { min-height: 2.6875rem; padding: 0.375rem 0.75rem; gap: 0.5625rem; flex-wrap: nowrap; text-align: left; }
+  .booking-banner-inner > svg { width: 1.4375rem; height: 1.4375rem; }
+  .booking-banner-inner h2 { font-size: 1.0625rem; }
+  .booking-banner-inner p { display: block; font-size: 0.4375rem; }
+  .booking-banner-inner .button { min-height: 1.5625rem; flex: 0 0 auto; padding-inline: 0.5625rem; font-size: 0.4375rem; }
+  .contact { gap: .25rem; padding: 0.375rem 0 0.3125rem; }
+  .contact-grid { grid-template-columns: 1.1fr .65fr 1.15fr 1.3fr auto; gap: 0.625rem; min-height: 3.625rem; }
+  .contact-grid h3 { font-size: 0.5625rem; }
+  .contact-grid a, .contact-grid p { gap: 0.1875rem; font-size: 0.375rem; line-height: 1.25; }
+  .contact-grid svg { width: 0.5rem; height: 0.5rem; }
+  .footer-brand .logo { transform: scale(.72); transform-origin: left top; }
+  .footer-brand > p { font-size: 0.3125rem; }
+  .social-links { display: flex; gap: 0.4375rem; padding-top: 0.5rem; }
+  .social-links span { font-size: 0.75rem; }
+  .copyright { padding-top: 0.25rem; font-size: 0.375rem; }
+}
+@media (max-width: 35rem) {
+  .container { width: calc(100% - 2rem); }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-copy { padding: 1.5rem 0.25rem 1.125rem; }
+  .hero h1 { font-size: 2.25rem; }
+  .hero-copy > p:not(.eyebrow) { max-width: 24.375rem; font-size: 0.75rem; }
+  .hero-image { position: relative; inset: auto; right: auto; width: 100%; aspect-ratio: 1.8 / 1; }
+  .hero-image img { object-position: center 14%; }
+  .hero-contact-link { justify-content: center; font-size: .75rem; }
+  .differential-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0.75rem 0.25rem; padding-block: 0.875rem; }
+  .differential-grid div { min-height: 3rem; font-size: 0.6875rem; }
+  .section { padding: 1.625rem 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 1.125rem; }
+  .about-image-frame { height: 13.75rem; }
+  .about-copy { max-width: none; text-align: center; }
+  .about-copy > p:not(.eyebrow) { font-size: 0.8125rem; }
+  .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0.625rem; }
+  .service-card { height: 9.0625rem; }
+  .team-grid { grid-template-columns: 1fr; width: min(22.5rem,100%); gap: 0.75rem; }
+  .team-card { height: 13.75rem; }
+  .testimonial-card { height: auto; grid-template-columns: 1fr; }
+  .testimonial-copy { padding: 1rem; text-align: center; }
+  .testimonial-card > img { height: 10.625rem; min-height: 0; }
+  .booking-banner-inner { flex-wrap: wrap; justify-content: center; text-align: center; padding: 1rem; }
+  .booking-banner-inner div { flex: 1 1 calc(100% - 3.375rem); text-align: left; }
+  .booking-banner-inner h2 { font-size: 1.4375rem; }
+  .booking-banner-inner .button { flex: 1 1 100%; }
+  .contact-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.125rem 0.75rem; }
+  .footer-brand { grid-row: auto; }
+  .social-links { align-self: start; }
+  .contact-grid > .social-links { grid-column: 1 / -1; justify-self: center; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 22.5rem) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .service-grid { grid-template-columns: 1fr; }
+  .service-card { height: 11.875rem; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
