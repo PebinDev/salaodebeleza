@@ -57,8 +57,8 @@
 .location-rating strong { color: var(--charcoal); font-size: 1rem; }
 .location-rating small { grid-column: 2; color: #827572; font-size: .5625rem; }
 .location-reviews { margin-top: .625rem; color: #716562; font-size: .6875rem; }
-.location-address, .location-phone { display: flex; align-items: flex-start; gap: .5rem; margin-top: .875rem; color: var(--charcoal); font-size: .75rem; line-height: 1.45; text-decoration: none; }
-.location-address svg, .location-phone svg { width: .9375rem; height: .9375rem; flex: 0 0 auto; color: var(--taupe); }
+.location-hours, .location-address, .location-phone { display: flex; align-items: flex-start; gap: .5rem; margin-top: .875rem; color: var(--charcoal); font-size: .75rem; line-height: 1.45; text-decoration: none; }
+.location-hours svg, .location-address svg, .location-phone svg { width: .9375rem; height: .9375rem; flex: 0 0 auto; color: var(--taupe); }
 .location-phone { align-items: center; margin-top: .5rem; font-weight: 600; }
 .location-highlight { min-height: 2.4rem; margin-top: .75rem; color: #716562; font-size: .6875rem; line-height: 1.5; }
 .location-actions { display: flex; gap: .5rem; margin-top: 1rem; }

@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 import './App.css'
 import heroImage from './assets/hero3.png'
-import { locations, mapUrl, whatsappUrl } from './locations'
+import { locations, mapUrl, openingHours, whatsappUrl } from './locations'
 import { reviewKindLabel, salonReviews } from './reviews'
 import { serviceCategories } from './services'
 
@@ -184,6 +184,7 @@ function App() {
                 <motion.article className="location-card" id={location.id} key={location.id} variants={cardVariants}>
                   <div className="location-card-heading"><div><span className="eyebrow">FORTALEZA &middot; CE</span><h3>{location.name}</h3><p>{location.neighborhood}</p></div><div className="location-rating" aria-label={`Nota ${location.rating} de 5 no Google`}><Star fill="currentColor" /><strong>{location.rating}</strong><small>Google</small></div></div>
                   <p className="location-reviews">{location.reviewCount} avalia&ccedil;&otilde;es</p>
+                  <p className="location-hours"><Clock3 />{openingHours}</p>
                   <p className="location-address"><MapPin />{location.address}, {location.postalCode}</p>
                   <a className="location-phone" href={`tel:+${location.phoneDigits}`}><Phone />{location.phone}</a>
                   <p className="location-highlight">{location.highlights}</p>
@@ -241,7 +242,7 @@ function App() {
             <div className="footer-brand"><Logo /><p>ESPA&Ccedil;O DE BELEZA &middot; FORTALEZA</p></div>
             <div><h3>Links</h3><a href="#inicio">In&iacute;cio</a><a href="#servicos">Servi&ccedil;os</a><a href="#unidades">Unidades</a><a href="#sobre">Sobre</a><a href="#avaliacoes">Avalia&ccedil;&otilde;es</a></div>
             <div><h3>Encontre sua unidade</h3>{locations.map((location) => <a key={location.id} href={`#${location.id}`}>{location.name} · {location.phone}</a>)}</div>
-            <div><h3>Hor&aacute;rios</h3><p><Clock3 /> Consulte cada unidade</p><a href="#unidades">Escolha uma unidade</a></div>
+            <div><h3>Hor&aacute;rios</h3><p><Clock3 /> {openingHours}</p></div>
           </div>
           <p className="copyright">&copy; 2026 SB Espa&ccedil;o de Beleza. Fortaleza, Cear&aacute;. Todos os direitos reservados.</p>
         </section>

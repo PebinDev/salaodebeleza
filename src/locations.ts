@@ -8,40 +8,41 @@ export type SalonLocation = {
   phoneDigits: string
   rating: string
   reviewCount: number
-  openingTime: string
   highlights: string
 }
+
+export const openingHours = 'Segunda a sábado, 08h às 19h'
 
 export const locations: SalonLocation[] = [
   {
     id: 'maraponga', name: 'Maraponga', neighborhood: 'Maraponga · Parangaba',
     address: 'Av. Godofredo Maciel, 4035 - Parangaba, Fortaleza - CE', postalCode: '60711-495',
     phone: '(85) 2135-5544', phoneDigits: '558521355544', rating: '4,8', reviewCount: 137,
-    openingTime: '08h', highlights: 'Cabelo, manicure, depilação e atendimento acolhedor.',
+    highlights: 'Cabelo, manicure, depilação e atendimento acolhedor.',
   },
   {
     id: 'coco', name: 'Cocó', neighborhood: 'Cocó',
     address: 'Av. Eng. Santana Jr., 2790 - Cocó, Fortaleza - CE', postalCode: '60192-200',
     phone: '(85) 3051-2494', phoneDigits: '558530512494', rating: '4,9', reviewCount: 234,
-    openingTime: '08h', highlights: 'Cabelo, mechas, escova, manicure e estacionamento.',
+    highlights: 'Cabelo, mechas, escova, manicure e estacionamento.',
   },
   {
     id: 'guararapes', name: 'Guararapes', neighborhood: 'Guararapes',
     address: 'R. Atilano de Moura, 320 - Guararapes, Fortaleza - CE', postalCode: '60810-180',
     phone: '(85) 3077-2004', phoneDigits: '558530772004', rating: '4,8', reviewCount: 140,
-    openingTime: '08h30', highlights: 'Estrutura, limpeza, manicure e serviços de cabelo.',
+    highlights: 'Estrutura, limpeza, manicure e serviços de cabelo.',
   },
   {
     id: 'sul', name: 'Sul', neighborhood: 'Cidade dos Funcionários',
     address: 'R. Joãozito Arruda, 2200 - Cidade dos Funcionários, Fortaleza - CE', postalCode: '60824-075',
     phone: '(85) 3271-0843', phoneDigits: '558532710843', rating: '4,6', reviewCount: 353,
-    openingTime: '08h', highlights: 'Manicure, depilação, cabelo e variedade de profissionais.',
+    highlights: 'Manicure, depilação, cabelo e variedade de profissionais.',
   },
   {
     id: 'passare', name: 'Passaré', neighborhood: 'Passaré · Serrinha',
     address: 'Rua XII, 200, lojas 04 a 07 - Serrinha, Fortaleza - CE', postalCode: '60744-780',
     phone: '(85) 3295-6990', phoneDigits: '558532956990', rating: '4,6', reviewCount: 319,
-    openingTime: '08h', highlights: 'Manicure, nail design, cabelo e barbearia.',
+    highlights: 'Manicure, nail design, cabelo e barbearia.',
   },
 ]
 
