@@ -25,7 +25,6 @@ export const salonReviews: SalonReview[] = [
   { id: 'maraponga-summary-3', locationId: 'maraponga', kind: 'summary', text: 'Estive no salão e o ambiente é maravilhoso, confortável e acolhedor.' },
   { id: 'maraponga-nikely-feitosa', locationId: 'maraponga', kind: 'review', author: 'Nikely Feitosa', rating: 5, publishedAt: '1 mês atrás', incomplete: true, text: 'Amo esse salão! É um lugar onde sempre sou muito bem recebida e saio de lá me sentindo ainda mais linda. Faço cabelo, unhas e todos os serviços são sempre feitos com muito carinho, cuidado e profissionalismo. …' },
   { id: 'maraponga-isadorah-dantas', locationId: 'maraponga', kind: 'review', author: 'Isadorah Dantas', rating: 5, publishedAt: '3 semanas atrás', incomplete: true, text: 'Gostaria de Parabenizar o trabalho do Marcos que sempre é muito gentil e profissional! As manicures Jessica, Patrícia e Katia são as melhores, além disso, o serviço de depilação com a Katia é espetacular. No que diz respeito a recepção, é …' },
-  { id: 'maraponga-mayrla-lima', locationId: 'maraponga', kind: 'review', author: 'Mayrla Lima', rating: 5, publishedAt: '2 meses atrás', incomplete: true, text: 'O salão possui uma rotatividade muito alta de profissionais, onde não conseguimos manter um atendimento personalizado. Tive uma péssima experiência de corte no último sábado, onde a cabeleireira deixou meu cabelo todo desigual e uma mecha …' },
 
   // Guararapes.
   { id: 'guararapes-summary-1', locationId: 'guararapes', kind: 'summary', text: 'Salão com ótima estrutura, limpo, profissionais competentes.' },
@@ -40,7 +39,6 @@ export const salonReviews: SalonReview[] = [
   { id: 'sul-summary-2', locationId: 'sul', kind: 'summary', text: 'Quem fez meu cabelo foi o Felipe um rapaz novo, na idade, apenas.' },
   { id: 'sul-summary-3', locationId: 'sul', kind: 'summary', incomplete: true, text: 'Minhas unhas sempre perfeitas... profissional nota mil!!' },
   { id: 'sul-visitor-update', locationId: 'sul', kind: 'visitor-update', text: 'Meu salão a anos com atendimento maravilhoso! Unha de qualidade com perfeição, Vânia minha querida que sempre atende com tanto carinho e excelência se torna uma terapia com sua positividade e amor. Equipe de depilação maravilhosa Juliette e Aline. Gratidão meninas por tanto carinho' },
-  { id: 'sul-anne-kayline', locationId: 'sul', kind: 'review', author: 'anne kayline', rating: 5, publishedAt: '3 semanas atrás', incomplete: true, text: 'Infelizmente, não tenho tido boas experiências no salão, e acredito que alguns pontos precisam ser revistos para melhorar o atendimento e a relação com os clientes. …' },
   { id: 'sul-claudio-pimentel', locationId: 'sul', kind: 'review', author: 'Claudio Pimentel', rating: 5, publishedAt: '2 meses atrás', incomplete: true, text: 'Desde que cheguei a cidade, com meus filhos, sou cliente desta unidade do Espaço Belíssima. Alguns profissionais muito competentes, conquistaram a mim e meus filhos. …' },
 
   // Passaré.
