@@ -17,7 +17,6 @@ export const salonReviews: SalonReview[] = [
   { id: 'coco-summary-2', locationId: 'coco', kind: 'summary', text: 'Minha primeira vez no Belíssima e simplesmente amei tudo.' },
   { id: 'coco-summary-3', locationId: 'coco', kind: 'summary', text: 'Uma senhora super.experiente e muito gente boa !.unha perfeita.' },
   { id: 'coco-cecilia-clark', locationId: 'coco', kind: 'review', author: 'Cecilia Clark', rating: 5, publishedAt: '1 semana atrás', incomplete: true, text: 'Fiz as mechas com o Roner no Belíssima do Cocó e adorei o resultado!! Excelente profissional! O trabalho foi realizado com muito capricho, técnica e atenção aos detalhes. Ele soube valorizar o meu cabelo, alcançando um resultado lindo, …' },
-  { id: 'coco-regina-cidrao', locationId: 'coco', kind: 'review', author: 'Regina Cidrao', rating: 5, publishedAt: '1 mês atrás', incomplete: true, text: 'Péssimo atendimento, fui atrás de fazer unha em fibra de vidro e especifiquei, cheguei lá 12:45, sai de lá 16:00. a recepcionista disse que a mulher sabia fazer, a própria manicure disse não tinha experiência, ela mesma falou, que estava …' },
   { id: 'coco-diana-braz', locationId: 'coco', kind: 'review', author: 'Diana Braz', rating: 5, publishedAt: '2 semanas atrás', incomplete: true, text: 'Registrando aqui minha satisfação com o trabalho da cabelereira Bety, sempre muito atenciosa e delicada, sou cliente dela a algum tempo e sempre muito satisfeita com o resultado. Excelente profissional. Toop...' },
 
   // Maraponga.
@@ -42,8 +41,6 @@ export const salonReviews: SalonReview[] = [
   { id: 'sul-summary-3', locationId: 'sul', kind: 'summary', incomplete: true, text: 'Minhas unhas sempre perfeitas... profissional nota mil!!' },
   { id: 'sul-visitor-update', locationId: 'sul', kind: 'visitor-update', text: 'Meu salão a anos com atendimento maravilhoso! Unha de qualidade com perfeição, Vânia minha querida que sempre atende com tanto carinho e excelência se torna uma terapia com sua positividade e amor. Equipe de depilação maravilhosa Juliette e Aline. Gratidão meninas por tanto carinho' },
   { id: 'sul-anne-kayline', locationId: 'sul', kind: 'review', author: 'anne kayline', rating: 5, publishedAt: '3 semanas atrás', incomplete: true, text: 'Infelizmente, não tenho tido boas experiências no salão, e acredito que alguns pontos precisam ser revistos para melhorar o atendimento e a relação com os clientes. …' },
-  { id: 'sul-marilene-lima', locationId: 'sul', kind: 'review', author: 'Marilene Lima', rating: 5, publishedAt: '5 meses atrás', incomplete: true, text: 'Já fui no salão algumas vezes pra fazer unhas, mas sempre é uma roleta russa. São muitas manicures, mas muitas não demonstram experiência. Essa imagem é de uma unha que fiz determinado dia e quando a moça disse que tinha terminado eu fiquei …' },
-  { id: 'sul-marilene-response', locationId: 'sul', kind: 'owner-response', author: 'Resposta do proprietário', text: 'Olá! Sentimos muito por sua experiência e lamentamos que o atendimento não tenha correspondido às suas expectativas. Levamos seu relato sobre o cabelo e os demais serviços muito a sério e queremos apurar o que aconteceu com …', incomplete: true },
   { id: 'sul-claudio-pimentel', locationId: 'sul', kind: 'review', author: 'Claudio Pimentel', rating: 5, publishedAt: '2 meses atrás', incomplete: true, text: 'Desde que cheguei a cidade, com meus filhos, sou cliente desta unidade do Espaço Belíssima. Alguns profissionais muito competentes, conquistaram a mim e meus filhos. …' },
 
   // Passaré.
@@ -52,7 +49,6 @@ export const salonReviews: SalonReview[] = [
   { id: 'passare-summary-3', locationId: 'passare', kind: 'summary', text: 'Marina arrasa no cabelo e capuccino top.' },
   { id: 'passare-juliana-bezerra', locationId: 'passare', kind: 'review', author: 'Juliana Bezerra', rating: 5, publishedAt: '5 meses atrás', text: 'Passando para elogiar essas maravilhosas, Erika e Odelia! Atendimento incrível, unhas impecáveis e um carinho que faz toda diferença. Vocês são maravilhosas 🩷✨' },
   { id: 'passare-ilena-bessa', locationId: 'passare', kind: 'review', author: 'Ilena Bessa', rating: 5, publishedAt: '7 meses atrás', incomplete: true, text: 'Maiara… Manicure EXCELENTE, cuidadosa e bem caprichosa! Só faço minha unha do pé com ela 🩷 Rayssa NAIL DESIGN!! Capricho e rapidez! Eu amo! Unha delicadas e discretas, como eu amo! A melhor!' },
-  { id: 'passare-emilly-nicolly', locationId: 'passare', kind: 'review', author: 'Emilly Nicolly', rating: 5, publishedAt: '2 meses atrás', incomplete: true, text: 'Ambiente muito sujo, Chão muito sujo, poltronas sujas, atendimento da recepção achei muito frio, o café que a manicure me ofereceu demorou 20 minutos, quando eu estava finalizando o procedimento foi que chegou, mas o que mais me incomodou …' },
 ]
 
 export function reviewKindLabel(kind: ReviewKind) {

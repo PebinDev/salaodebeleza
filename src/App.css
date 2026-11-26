@@ -71,8 +71,7 @@
 .scroll-progress { position: fixed; inset: 0 0 auto; z-index: 100; height: .125rem; transform-origin: 0 50%; pointer-events: none; background: linear-gradient(90deg, var(--brand-magenta), var(--brand-orange)); }
 .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 .logo { display: flex; align-items: center; gap: 0.5rem; min-width: 10.625rem; color: var(--charcoal); text-decoration: none; }
-.logo-mark, .logo-mark svg { width: 2.375rem; height: 2.375rem; }
-.logo-mark { display: grid; place-items: center; color: var(--taupe); }
+.logo-mark { display: block; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; border-radius: 50%; object-fit: cover; }
 .logo-copy { display: flex; flex-direction: column; gap: .1875rem; line-height: 1; }
 .logo-copy strong { font: 600 1.8125rem/1 "Cormorant Garamond", Georgia, serif; }
 .logo-copy small { font-size: 0.4375rem; letter-spacing: .028rem; font-weight: 700; }
@@ -119,15 +118,23 @@
 .section-heading { display: flex; flex-direction: column; align-items: center; gap: .5rem; text-align: center; }
 .section-heading p { font-size: 0.8125rem; }
 .services { padding-top: 0.75rem; }
-.service-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin-top: 1.25rem; perspective: 65rem; }
-.service-card { position: relative; height: 10.625rem; overflow: hidden; border-radius: 0.625rem; background: var(--sand); will-change: transform, opacity; }
-.service-card img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .65s cubic-bezier(.16,1,.3,1), filter .65s ease; }
-.service-card:hover img { transform: scale(1.035); filter: saturate(1.03); }
-.service-card button, .team-card button { position: absolute; inset-inline: 0; bottom: 0; width: 100%; min-height: 2.75rem; border: 0; display: flex; align-items: center; justify-content: space-between; padding: 0.4375rem 0.75rem; color: var(--charcoal); background: rgba(248,244,239,.96); cursor: pointer; text-align: left; }
-.service-card button span, .team-card button span { display: flex; flex-direction: column; }
-.service-card button strong { font: 600 1.25rem/1 "Cormorant Garamond", Georgia, serif; }
-.service-card button small { display: none; }
-.service-card button svg, .team-card button svg { width: 1.0625rem; height: 1.0625rem; flex: 0 0 auto; }
+.service-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin-top: 1.5rem; perspective: 65rem; }
+.service-card { min-width: 0; overflow: hidden; border: 1px solid rgba(75,7,18,.08); border-radius: .875rem; background: #fffdfa; box-shadow: 0 .375rem 1.25rem rgba(75,7,18,.055); will-change: transform, opacity; transition: box-shadow .3s ease; }
+.service-card:hover { box-shadow: 0 .875rem 1.875rem rgba(75,7,18,.12); }
+.service-card-image { position: relative; aspect-ratio: 1.48; overflow: hidden; background: var(--sand); }
+.service-card-image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 5%; }
+.service-card-image img.service-image-contain { object-fit: contain; object-position: center; }
+.service-card-image > span { position: absolute; right: .75rem; top: .75rem; min-width: 2rem; height: 2rem; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; color: white; background: rgba(75,7,18,.62); font-size: .625rem; font-weight: 700; backdrop-filter: blur(.25rem); }
+.service-card-copy { min-height: 10.5rem; padding: 1rem 1.125rem 1.125rem; display: flex; flex-direction: column; align-items: flex-start; }
+.service-card-kicker { color: var(--taupe); font-size: .5625rem; font-weight: 700; letter-spacing: .1em; }
+.service-card-copy h3 { margin-top: .35rem; color: var(--brown); font: 600 1.35rem/1.05 "Cormorant Garamond", Georgia, serif; }
+.service-card-copy > p:not(.service-card-kicker) { margin-top: .5rem; color: #716562; font-size: .75rem; line-height: 1.45; }
+.service-card-copy button { margin-top: auto; padding: .75rem 0 0; display: inline-flex; align-items: center; gap: .5rem; border: 0; color: var(--brown); background: transparent; font-size: .6875rem; font-weight: 700; cursor: pointer; }
+.service-card-copy button svg { width: .875rem; height: .875rem; transition: transform .2s ease; }
+.service-card-copy button:hover svg { transform: translateX(.2rem); }
+.team-card button { position: absolute; inset-inline: 0; bottom: 0; width: 100%; min-height: 2.75rem; border: 0; display: flex; align-items: center; justify-content: space-between; padding: 0.4375rem 0.75rem; color: var(--charcoal); background: rgba(248,244,239,.96); cursor: pointer; text-align: left; }
+.team-card button span { display: flex; flex-direction: column; }
+.team-card button svg { width: 1.0625rem; height: 1.0625rem; flex: 0 0 auto; }
 .team { padding-top: 1.125rem; }
 .team-grid { position: relative; left: 50%; translate: -50% 0; width: min(53.125rem,100%); display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1rem; perspective: 65rem; }
 .team-card { position: relative; height: 11.25rem; overflow: hidden; border-radius: 0.625rem; background: var(--rose); will-change: transform, opacity; }
@@ -138,7 +145,7 @@
 .team-card button strong { font-size: 0.75rem; }
 .team-card button small { color: #655d55; font-size: 0.625rem; }
 .team-card button { transition: background-color .25s ease; }
-.team-card:hover button, .service-card:hover button { background: rgba(255,255,255,.98); }
+.team-card:hover button { background: rgba(255,255,255,.98); }
 .testimonial { padding: 0 0 1.125rem; }
 .testimonial-card { height: 10rem; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; border-radius: 0.75rem; background: #eee1d3; }
 .testimonial-copy { align-self: center; display: flex; flex-direction: column; gap: .375rem; padding: .875rem clamp(1rem,3vw,2rem); }
@@ -222,7 +229,7 @@
   .header { height: 2.5rem; }
   .header-inner { gap: 0.625rem; }
   .logo { min-width: 7rem; gap: 0.25rem; }
-  .logo-mark, .logo-mark svg { width: 1.75rem; height: 1.75rem; }
+  .logo-mark { width: 2.25rem; height: 2.25rem; }
   .logo-copy strong { font-size: 1.25rem; }
   .logo-copy small { font-size: 0.3125rem; }
   .menu-button { display: none; }
@@ -355,7 +362,7 @@
   .header { height: 3.75rem; }
   .header-inner { gap: .75rem; }
   .logo { min-width: 0; gap: .5rem; }
-  .logo-mark, .logo-mark svg { width: 2rem; height: 2rem; }
+  .logo-mark { width: 2.5rem; height: 2.5rem; }
   .logo-copy strong { font-size: 1.5rem; }
   .logo-copy small { font-size: .4rem; }
   .menu-button { display: grid; width: 2.75rem; height: 2.75rem; }
@@ -382,9 +389,9 @@
   .about-copy .button { min-height: 2.5rem; padding-inline: .875rem; font-size: .75rem; }
   .services.section { padding-top: var(--section-space); }
   .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .875rem; }
-  .service-card { height: clamp(8.5rem, 18vw, 10.5rem); }
-  .service-card button { min-height: 2.75rem; padding: .5rem .75rem; }
-  .service-card button strong { font-size: 1.125rem; }
+  .service-card { height: auto; }
+  .service-card-copy { min-height: 10.25rem; padding: .875rem; }
+  .service-card-copy h3 { font-size: 1.25rem; }
   .location-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .875rem; }
   .location-card { padding: 1.125rem; }
   .location-actions .button { min-height: 2.5rem; font-size: .75rem; }
@@ -411,7 +418,8 @@
   .about-copy h2, .section-heading h2 { font-size: clamp(1.875rem, 8vw, 2.25rem); }
   .section-heading p { font-size: .8125rem; line-height: 1.45; }
   .service-grid { gap: .75rem; }
-  .service-card { height: clamp(8.75rem, 42vw, 11rem); }
+  .service-card { height: auto; }
+  .service-card-copy { min-height: 10.5rem; padding: .875rem; }
   .location-grid { gap: .875rem; }
   .review-location-filters { justify-content: flex-start; }
   .review-carousel-controls { align-items: center; }

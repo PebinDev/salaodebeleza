@@ -11,7 +11,6 @@ import {
   Phone,
   Scissors,
   X,
-  Flower2,
   Armchair,
   MessageCircle,
   MapPin,
@@ -21,6 +20,7 @@ import './App.css'
 import heroImage from './assets/hero3.png'
 import { locations, mapUrl, whatsappUrl } from './locations'
 import { reviewKindLabel, salonReviews } from './reviews'
+import { serviceCategories } from './services'
 
 const revealVariants = {
   hidden: { opacity: 0, y: 14 },
@@ -37,16 +37,10 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.48, ease: [0.22, 1, 0.36, 1] as const } },
 }
 
-const services = [
-  { name: 'Cabelos', detail: 'Cuidado e beleza para os cabelos.', image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85' },
-  { name: 'Manicure e pedicure', detail: 'Unhas cuidadas para o seu dia a dia.', image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85' },
-  { name: 'Depila\u00e7\u00e3o', detail: 'Atendimento cuidadoso e profissional.', image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=85' },
-  { name: 'Cuidados com a beleza', detail: 'Consulte a equipe sobre os servi\u00e7os dispon\u00edveis.', image: 'https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=900&q=85' },
-]
 function Logo() {
   return (
     <a className="logo" href="#inicio" aria-label="SB Espaço de Beleza, rede de Fortaleza">
-      <span className="logo-mark" aria-hidden="true"><Flower2 strokeWidth={1.2} /></span>
+      <img className="logo-mark" src={`${import.meta.env.BASE_URL}logo.png`} alt="" aria-hidden="true" />
       <span className="logo-copy"><strong>SB</strong><small>ESPAÇO DE BELEZA · FORTALEZA</small></span>
     </a>
   )
@@ -65,8 +59,6 @@ function App() {
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 90, damping: 28, restDelta: 0.001 })
   const { scrollYProgress: aboutProgress } = useScroll({ target: aboutRef, offset: ['start end', 'end start'] })
   const aboutImageY = useSpring(useTransform(aboutProgress, [0, 1], ['-.3rem', '.3rem']), { stiffness: 80, damping: 24, restDelta: 0.001 })
-  const { scrollYProgress: servicesProgress } = useScroll({ target: servicesRef, offset: ['start end', 'end start'] })
-  const serviceImageY = useSpring(useTransform(servicesProgress, [0, 1], ['-.25rem', '.25rem']), { stiffness: 80, damping: 24, restDelta: 0.001 })
   const displayedReviews = selectedReviewLocation === 'all'
     ? salonReviews
     : salonReviews.filter((review) => review.locationId === selectedReviewLocation)
@@ -165,17 +157,15 @@ function App() {
         <section className="services section" id="servicos" ref={servicesRef}>
           <div className="container">
             <motion.div className="section-heading" variants={revealVariants} initial={reduceMotion ? false : 'hidden'} whileInView="visible" viewport={{ once: true, amount: 0.7 }}>
+              <p className="eyebrow">CUIDADO PARA CADA MOMENTO</p>
               <h2>Nossos Servi&ccedil;os</h2>
-              <p>Conhe&ccedil;a as categorias de atendimento e consulte a equipe sobre os servi&ccedil;os dispon&iacute;veis.</p>
+              <p>Descubra as possibilidades de cuidado e beleza da rede SB.</p>
             </motion.div>
             <motion.div className="service-grid" variants={staggerVariants} initial={reduceMotion ? false : 'hidden'} whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-              {services.map((service) => (
-                <motion.article className="service-card" key={service.name} variants={cardVariants} whileHover={reduceMotion ? undefined : { y: -4, scale: 1.015 }} transition={{ type: 'spring', stiffness: 260, damping: 22 }}>
-                  <motion.img style={reduceMotion ? undefined : { y: serviceImageY, scale: 1.06 }} src={service.image} alt={`Imagem ilustrativa de ${service.name} no SB Espaço de Beleza`} width="420" height="300" loading="lazy" />
-                  <button type="button" onClick={openBooking} aria-label={`Agendar servi&ccedil;o de ${service.name}`}>
-                    <span><strong>{service.name}</strong><small>{service.detail}</small></span>
-                    <ChevronRight />
-                  </button>
+              {serviceCategories.map((service, index) => (
+                <motion.article className="service-card" key={service.name} variants={cardVariants} whileHover={reduceMotion ? undefined : { y: -5 }} transition={{ type: 'spring', stiffness: 260, damping: 22 }}>
+                  <div className="service-card-image"><img className={service.imageFit === 'contain' ? 'service-image-contain' : undefined} src={service.image} alt={service.imageAlt} width="420" height="300" loading="lazy" /><span>{String(index + 1).padStart(2, '0')}</span></div>
+                  <div className="service-card-copy"><p className="service-card-kicker">SB ESPA&Ccedil;O DE BELEZA</p><h3>{service.name}</h3><p>{service.description}</p><button type="button" onClick={openBooking}>Ver unidades <ChevronRight /></button></div>
                 </motion.article>
               ))}
             </motion.div>
