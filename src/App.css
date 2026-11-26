@@ -1,16 +1,24 @@
 :root {
-  --ivory: #f8f4ef;
-  --sand: #eadccd;
-  --taupe: #a9825f;
-  --brown: #594332;
-  --charcoal: #29221d;
-  --gold: #c99a36;
-  --rose: #d9c4b2;
+  --ivory: #faf7f5;
+  --sand: #f0e7e2;
+  --taupe: #b66d7c;
+  --brown: #4b0712;
+  --charcoal: #39302f;
+  --gold: #e8a021;
+  --rose: #d8bdb4;
+  --brand-magenta: #e6007e;
+  --brand-orange: #ffad00;
 }
 
+.review-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1.25rem; }
+.review-grid blockquote { min-height: 8.5rem; padding: 1rem; border: 1px solid #eadbd5; border-radius: .625rem; background: #fff; display: flex; flex-direction: column; gap: .5rem; }
+.review-grid blockquote span { color: var(--gold); letter-spacing: .1rem; }
+.review-grid blockquote p { flex: 1; font: 500 1.125rem/1.25 "Cormorant Garamond", Georgia, serif; }
+.review-grid blockquote small { color: #827572; font-size: .6875rem; }
+
 .container { position: relative; left: 50%; translate: -50% 0; width: min(67.5rem, calc(100% - 3rem)); }
-.header { height: 4.25rem; position: sticky; top: 0; z-index: 30; background: rgba(248,244,239,.97); border-bottom: 0.0625rem solid #dfd2c5; backdrop-filter: blur(0.625rem); }
-.scroll-progress { position: fixed; inset: 0 0 auto; z-index: 100; height: .125rem; transform-origin: 0 50%; pointer-events: none; background: linear-gradient(90deg, #a9825f, #c99a36); }
+.header { height: 4.25rem; position: sticky; top: 0; z-index: 30; background: rgba(250,247,245,.97); border-bottom: 0.0625rem solid #e3d6d1; backdrop-filter: blur(0.625rem); }
+.scroll-progress { position: fixed; inset: 0 0 auto; z-index: 100; height: .125rem; transform-origin: 0 50%; pointer-events: none; background: linear-gradient(90deg, var(--brand-magenta), var(--brand-orange)); }
 .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 .logo { display: flex; align-items: center; gap: 0.5rem; min-width: 10.625rem; color: var(--charcoal); text-decoration: none; }
 .logo-mark, .logo-mark svg { width: 2.375rem; height: 2.375rem; }
@@ -28,11 +36,11 @@
 .button:hover svg, .service-card button:hover svg, .team-card button:hover svg { transform: translateX(.1875rem); }
 .button:focus-visible, .service-card button:focus-visible, .team-card button:focus-visible, .nav a:focus-visible, .social-links a:focus-visible { outline: .125rem solid var(--gold); outline-offset: .1875rem; }
 .button-brown { color: white; background: var(--brown); }
-.button-brown:hover { background: #493829; transform: translateY(-0.1875rem); box-shadow: 0 .625rem 1.25rem rgba(70,48,31,.24); }
+.button-brown:hover { background: #35040c; transform: translateY(-0.1875rem); box-shadow: 0 .625rem 1.25rem rgba(75,7,18,.24); }
 .button-outline { color: var(--brown); border-color: var(--brown); background: transparent; }
 .button-outline:hover { background: rgba(89,67,50,.07); }
 .button-white { color: var(--charcoal); background: white; }
-.hero { overflow: hidden; background: radial-gradient(ellipse at 76% 54%, rgba(188,137,96,.2) 0%, rgba(188,137,96,.08) 32%, transparent 62%), linear-gradient(112deg,#f5ece3 0%,#f1e4d8 48%,#ead9c8 100%); }
+.hero { overflow: hidden; background: radial-gradient(ellipse at 76% 54%, rgba(230,0,126,.1) 0%, rgba(230,0,126,.035) 32%, transparent 62%), linear-gradient(112deg,#fff8f5 0%,#f7e9e8 48%,#f0dfda 100%); }
 .hero-grid { position: relative; display: grid; grid-template-columns: 45% 55%; align-items: stretch; }
 .hero-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: .625rem; padding: 2.5rem 2.125rem 2.5rem 1.25rem; }
 .eyebrow { color: var(--brown); font-size: 0.625rem; font-weight: 700; letter-spacing: 0.0813rem; }
@@ -41,7 +49,7 @@
 .hero-title-mask { display: block; overflow: hidden; padding-block: .045em; }
 .hero-title-mask > span { display: block; will-change: transform, filter, opacity; }
 .hero-copy > p:not(.eyebrow) { max-width: 25.625rem; font-size: 0.9375rem; line-height: 1.55; }
-.hero-copy > p strong { color: #4a3528; font-weight: 700; }
+.hero-copy > p strong { color: var(--brown); font-weight: 700; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.625rem; }
 .hero-contact-link { flex-basis: 100%; width: max-content; display: inline-flex; align-items: center; gap: .25rem; color: var(--brown); font-size: .75rem; font-weight: 700; text-decoration: none; }
 .hero-contact-link svg { width: .875rem; height: .875rem; transition: transform .25s ease; }
@@ -49,10 +57,10 @@
 .hero-contact-link:hover svg { transform: translateX(.25rem); }
 .hero-image { position: absolute; inset-block: 0; right: 0; width: 55%; overflow: hidden; isolation: isolate; }
 .hero-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
-.differentials { background: #f6eee6; border-bottom: 0.0625rem solid #eee5dc; }
+.differentials { background: #f7eeeb; border-bottom: 0.0625rem solid #eee5dc; }
 .differential-grid { min-height: 5.375rem; display: grid; grid-template-columns: repeat(4,1fr); align-items: center; }
 .differential-grid div { display: flex; align-items: center; justify-content: center; gap: 0.625rem; text-align: left; font-size: 0.75rem; line-height: 1.25; }
-.differential-grid svg { width: 1.4375rem; height: 1.4375rem; color: #78563d; stroke-width: 1.5; }
+.differential-grid svg { width: 1.4375rem; height: 1.4375rem; color: var(--taupe); stroke-width: 1.5; }
 .differential-grid svg { transition: transform .35s cubic-bezier(.2,.8,.2,1); }
 .differential-grid div:hover svg { transform: translateY(-.125rem) rotate(-4deg); }
 .section { padding: 2.125rem 0; }
@@ -100,7 +108,7 @@
 .booking-banner-inner h2 { color: white; font-size: 1.75rem; line-height: 1; }
 .booking-banner-inner p { font-size: 0.75rem; }
 .contact { display: flex; flex-direction: column; gap: .875rem; padding: 1.375rem 0 0.625rem; background: var(--ivory); }
-.contact-grid { display: grid; grid-template-columns: 1.1fr .65fr 1.2fr 1.2fr auto; gap: 1.5rem; align-items: start; }
+.contact-grid { display: grid; grid-template-columns: 1.1fr .65fr 1.2fr 1.2fr; gap: 1.5rem; align-items: start; }
 .contact-grid > div { display: flex; flex-direction: column; align-items: flex-start; gap: .3125rem; }
 .contact-grid h3 { font: 600 1.0625rem/1.1 "Cormorant Garamond", Georgia, serif; }
 .contact-grid a, .contact-grid p { display: flex; align-items: center; gap: 0.375rem; color: var(--charcoal); font-size: 0.625rem; line-height: 1.35; text-decoration: none; }
@@ -219,7 +227,7 @@
   .booking-banner-inner p { display: block; font-size: 0.4375rem; }
   .booking-banner-inner .button { min-height: 1.5625rem; flex: 0 0 auto; padding-inline: 0.5625rem; font-size: 0.4375rem; }
   .contact { gap: .25rem; padding: 0.375rem 0 0.3125rem; }
-  .contact-grid { grid-template-columns: 1.1fr .65fr 1.15fr 1.3fr auto; gap: 0.625rem; min-height: 3.625rem; }
+  .contact-grid { grid-template-columns: 1.1fr .65fr 1.15fr 1.3fr; gap: 0.625rem; min-height: 3.625rem; }
   .contact-grid h3 { font-size: 0.5625rem; }
   .contact-grid a, .contact-grid p { gap: 0.1875rem; font-size: 0.375rem; line-height: 1.25; }
   .contact-grid svg { width: 0.5rem; height: 0.5rem; }
@@ -251,6 +259,7 @@
   .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0.625rem; }
   .service-card { height: 9.0625rem; }
   .team-grid { grid-template-columns: 1fr; width: min(22.5rem,100%); gap: 0.75rem; }
+  .review-grid { grid-template-columns: 1fr; }
   .team-card { height: 13.75rem; }
   .testimonial-card { height: auto; grid-template-columns: 1fr; }
   .testimonial-copy { padding: 1rem; text-align: center; }
@@ -262,7 +271,6 @@
   .contact-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.125rem 0.75rem; }
   .footer-brand { grid-row: auto; }
   .social-links { align-self: start; }
-  .contact-grid > .social-links { grid-column: 1 / -1; justify-self: center; }
   .form-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 22.5rem) {
