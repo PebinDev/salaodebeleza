@@ -6,8 +6,10 @@
   --charcoal: #39302f;
   --gold: #e8a021;
   --rose: #d8bdb4;
+  --section-tint: #f3e9e4;
   --brand-magenta: #e6007e;
   --brand-orange: #ffad00;
+  --section-space: 2rem;
 }
 
 .review-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1.25rem; }
@@ -15,6 +17,54 @@
 .review-grid blockquote span { color: var(--gold); letter-spacing: .1rem; }
 .review-grid blockquote p { flex: 1; font: 500 1.125rem/1.25 "Cormorant Garamond", Georgia, serif; }
 .review-grid blockquote small { color: #827572; font-size: .6875rem; }
+.review-location-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin: 1.25rem 0 .875rem; }
+.review-location-filters button { min-height: 2.25rem; padding: 0 .875rem; border: 1px solid #dfcfc8; border-radius: 99px; color: var(--brown); background: #fff; font-size: .75rem; cursor: pointer; transition: color .2s ease, background .2s ease, border-color .2s ease; }
+.review-location-filters button:hover, .review-location-filters button.selected { color: white; border-color: var(--brown); background: var(--brown); }
+.review-location-filters button:focus-visible, .review-carousel-controls button:focus-visible, .reviews-carousel:focus-visible { outline: .125rem solid var(--gold); outline-offset: .1875rem; }
+.review-location-ratings { display: flex; flex-wrap: wrap; justify-content: center; gap: .625rem; margin-bottom: 1.125rem; }
+.review-location-ratings > span { display: flex; align-items: center; gap: .45rem; padding: .5rem .75rem; border: 1px solid #eadbd5; border-radius: .5rem; background: rgba(255,255,255,.72); font-size: .6875rem; }
+.review-location-ratings strong { color: var(--brown); }
+.review-location-ratings span span { color: #a56709; font-weight: 700; }
+.review-location-ratings small { color: #827572; }
+.review-carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 0 0 .625rem; }
+.review-carousel-controls p { color: #827572; font-size: .6875rem; }
+.review-carousel-controls > div { display: flex; gap: .5rem; }
+.review-carousel-controls button { width: 2.375rem; height: 2.375rem; display: grid; place-items: center; border: 1px solid #dfcfc8; border-radius: 50%; color: var(--brown); background: white; cursor: pointer; }
+.review-carousel-controls button:hover { color: white; background: var(--brown); }
+.reviews-carousel { display: flex; gap: 1rem; overflow-x: auto; padding: .25rem .125rem .875rem; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-color: #b66d7c #f0e7e2; scrollbar-width: thin; }
+.reviews-carousel .review-card { flex: 0 0 19rem; min-height: 15rem; display: flex; flex-direction: column; gap: .75rem; padding: 1.125rem; border: 1px solid #eadbd5; border-radius: .75rem; background: #fff; scroll-snap-align: start; }
+.review-card-meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; color: #827572; font-size: .625rem; }
+.review-stars { color: var(--gold); font-size: .875rem; letter-spacing: .06rem; white-space: nowrap; }
+.reviews-carousel .review-card-text { flex: 1; color: var(--charcoal); font: 500 1.08rem/1.32 "Cormorant Garamond", Georgia, serif; overflow-wrap: anywhere; }
+.review-incomplete { color: #827572; font-size: .625rem; font-style: italic; }
+.reviews-carousel .review-card footer { display: flex; flex-direction: column; gap: .2rem; padding-top: .625rem; border-top: 1px solid #f0e7e2; }
+.reviews-carousel .review-card footer strong { color: var(--brown); font-size: .75rem; }
+.reviews-carousel .review-card footer span { color: #827572; font-size: .625rem; }
+.review-card-summary { background: #fffdfa !important; }
+.review-card-owner-response { border-color: #d8bdb4 !important; background: #f8f1ee !important; }
+.reviews-data-note { margin-top: .5rem; color: #827572; font-size: .625rem; line-height: 1.5; }
+
+.about, .locations, .booking-banner { background-color: var(--ivory); }
+.services, .reviews, .contact { background-color: var(--section-tint); }
+.locations { background: var(--ivory); }
+.location-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1.5rem; }
+.location-card { display: flex; flex-direction: column; min-width: 0; padding: 1.25rem; border: 1px solid #e5d7d1; border-radius: .75rem; background: #fffdfa; box-shadow: 0 0.5rem 1.5rem rgba(75,7,18,.045); }
+.location-card-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
+.location-card-heading h3 { margin-top: .25rem; font: 600 1.65rem/1.05 "Cormorant Garamond", Georgia, serif; color: var(--brown); }
+.location-card-heading p { margin-top: .25rem; color: #716562; font-size: .75rem; }
+.location-rating { min-width: 3.5rem; display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: .25rem; color: var(--gold); }
+.location-rating svg { width: .9rem; height: .9rem; }
+.location-rating strong { color: var(--charcoal); font-size: 1rem; }
+.location-rating small { grid-column: 2; color: #827572; font-size: .5625rem; }
+.location-reviews { margin-top: .625rem; color: #716562; font-size: .6875rem; }
+.location-address, .location-phone { display: flex; align-items: flex-start; gap: .5rem; margin-top: .875rem; color: var(--charcoal); font-size: .75rem; line-height: 1.45; text-decoration: none; }
+.location-address svg, .location-phone svg { width: .9375rem; height: .9375rem; flex: 0 0 auto; color: var(--taupe); }
+.location-phone { align-items: center; margin-top: .5rem; font-weight: 600; }
+.location-highlight { min-height: 2.4rem; margin-top: .75rem; color: #716562; font-size: .6875rem; line-height: 1.5; }
+.location-actions { display: flex; gap: .5rem; margin-top: 1rem; }
+.location-actions .button { min-height: 2.375rem; flex: 1; padding: 0 .625rem; font-size: .6875rem; }
+.location-actions .button svg { width: .875rem; height: .875rem; }
+.locations-note { margin-top: 1rem; color: #716562; font-size: .6875rem; text-align: center; }
 
 .container { position: relative; left: 50%; translate: -50% 0; width: min(67.5rem, calc(100% - 3rem)); }
 .header { height: 4.25rem; position: sticky; top: 0; z-index: 30; background: rgba(250,247,245,.97); border-bottom: 0.0625rem solid #e3d6d1; backdrop-filter: blur(0.625rem); }
@@ -41,8 +91,8 @@
 .button-outline:hover { background: rgba(89,67,50,.07); }
 .button-white { color: var(--charcoal); background: white; }
 .hero { overflow: hidden; background: radial-gradient(ellipse at 76% 54%, rgba(230,0,126,.1) 0%, rgba(230,0,126,.035) 32%, transparent 62%), linear-gradient(112deg,#fff8f5 0%,#f7e9e8 48%,#f0dfda 100%); }
-.hero-grid { position: relative; display: grid; grid-template-columns: 45% 55%; align-items: stretch; }
-.hero-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: .625rem; padding: 2.5rem 2.125rem 2.5rem 1.25rem; }
+.hero-grid { position: relative; display: grid; grid-template-columns: 45% 55%; align-items: stretch; min-height: clamp(23rem, 38vw, 28rem); }
+.hero-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: .625rem; padding: 3rem 2.125rem 3rem 1.25rem; }
 .eyebrow { color: var(--brown); font-size: 0.625rem; font-weight: 700; letter-spacing: 0.0813rem; }
 .hero h1, h2 { color: var(--charcoal); font-family: "Cormorant Garamond", Georgia, serif; }
 .hero h1 { font-size: clamp(2.375rem, 4vw, 3.375rem); line-height: .94; font-weight: 600; }
@@ -51,12 +101,8 @@
 .hero-copy > p:not(.eyebrow) { max-width: 25.625rem; font-size: 0.9375rem; line-height: 1.55; }
 .hero-copy > p strong { color: var(--brown); font-weight: 700; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.625rem; }
-.hero-contact-link { flex-basis: 100%; width: max-content; display: inline-flex; align-items: center; gap: .25rem; color: var(--brown); font-size: .75rem; font-weight: 700; text-decoration: none; }
-.hero-contact-link svg { width: .875rem; height: .875rem; transition: transform .25s ease; }
-.hero-contact-link:hover { text-decoration: underline; text-underline-offset: .2rem; }
-.hero-contact-link:hover svg { transform: translateX(.25rem); }
 .hero-image { position: absolute; inset-block: 0; right: 0; width: 55%; overflow: hidden; isolation: isolate; }
-.hero-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.hero-image img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: right bottom; }
 .differentials { background: #f7eeeb; border-bottom: 0.0625rem solid #eee5dc; }
 .differential-grid { min-height: 5.375rem; display: grid; grid-template-columns: repeat(4,1fr); align-items: center; }
 .differential-grid div { display: flex; align-items: center; justify-content: center; gap: 0.625rem; text-align: left; font-size: 0.75rem; line-height: 1.25; }
@@ -101,14 +147,21 @@
 .testimonial-copy p { font-size: 0.625rem; line-height: 1.4; }
 .testimonial-card > img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; }
 .booking-banner { padding-bottom: 1.125rem; }
-.booking-banner-inner { min-height: 4.625rem; padding: 0.75rem 1.375rem; display: flex; align-items: center; gap: 1rem; border-radius: 0.75rem; color: white; background: var(--brown); transition: box-shadow .35s ease, transform .35s ease; }
-.booking-banner-inner:hover { transform: translateY(-.125rem); box-shadow: 0 .75rem 1.75rem rgba(89,67,50,.16); }
-.booking-banner-inner > svg { width: 2rem; height: 2rem; flex: 0 0 auto; stroke-width: 1.4; }
-.booking-banner-inner div { flex: 1; display: flex; flex-direction: column; gap: .1875rem; }
-.booking-banner-inner h2 { color: white; font-size: 1.75rem; line-height: 1; }
-.booking-banner-inner p { font-size: 0.75rem; }
-.contact { display: flex; flex-direction: column; gap: .875rem; padding: 1.375rem 0 0.625rem; background: var(--ivory); }
+.booking-banner-inner { position: relative; isolation: isolate; min-height: 9.25rem; overflow: hidden; padding: 1.5rem 2rem; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.25rem; border: 1px solid rgba(232,160,33,.42); border-radius: 1.125rem; color: white; background: linear-gradient(112deg, #3f0610 0%, #5b0b1a 62%, #71142a 100%); box-shadow: 0 .875rem 2rem rgba(75,7,18,.16); transition: box-shadow .35s ease, transform .35s ease; }
+.booking-banner-inner::before { position: absolute; z-index: -1; inset: 0; content: ''; background: radial-gradient(ellipse at 82% 0%, rgba(232,160,33,.18), transparent 42%); pointer-events: none; }
+.booking-banner-inner::after { position: absolute; z-index: -1; top: -7rem; right: 13%; width: 17rem; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; box-shadow: 0 0 0 1.5rem rgba(255,255,255,.025), 0 0 0 3rem rgba(255,255,255,.02); content: ''; pointer-events: none; }
+.booking-banner-inner:hover { transform: translateY(-.125rem); box-shadow: 0 1.125rem 2.25rem rgba(75,7,18,.22); }
+.booking-icon { width: 3.5rem; height: 3.5rem; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.28); border-radius: 1rem; color: #f0c77d; background: rgba(255,255,255,.08); }
+.booking-icon svg { width: 1.75rem; height: 1.75rem; stroke-width: 1.6; }
+.booking-banner-copy { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: .25rem; }
+.booking-eyebrow { color: #f0c77d; font-size: .625rem; font-weight: 700; letter-spacing: .12em; }
+.booking-banner-inner h2 { color: white; font-size: clamp(1.625rem, 2.6vw, 2rem); line-height: 1.05; }
+.booking-banner-copy > p:not(.booking-eyebrow) { max-width: 35rem; color: rgba(255,255,255,.82); font-size: .8125rem; line-height: 1.45; }
+.booking-banner-inner .button { min-height: 3.125rem; padding-inline: 1.25rem; color: var(--brown); background: #fffaf4; box-shadow: 0 .375rem 1rem rgba(20,0,4,.2); }
+.booking-banner-inner .button:hover { color: var(--brown); background: white; transform: translateY(-.125rem); box-shadow: 0 .5rem 1.25rem rgba(20,0,4,.26); }
+.contact { display: flex; flex-direction: column; gap: .875rem; padding: 1.375rem 0 0.625rem; background: var(--section-tint); }
 .contact-grid { display: grid; grid-template-columns: 1.1fr .65fr 1.2fr 1.2fr; gap: 1.5rem; align-items: start; }
+.contact-grid > div > a { margin-top: .125rem; }
 .contact-grid > div { display: flex; flex-direction: column; align-items: flex-start; gap: .3125rem; }
 .contact-grid h3 { font: 600 1.0625rem/1.1 "Cormorant Garamond", Georgia, serif; }
 .contact-grid a, .contact-grid p { display: flex; align-items: center; gap: 0.375rem; color: var(--charcoal); font-size: 0.625rem; line-height: 1.35; text-decoration: none; }
@@ -161,6 +214,7 @@
   .about-grid { gap: 1.375rem; }
   .about-image-frame { height: 13.75rem; }
   .contact-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.125rem; }
+  .location-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .footer-brand { grid-row: span 2; }
 }
 @media (min-width: 35.0625rem) and (max-width: 51.25rem) {
@@ -184,8 +238,6 @@
   .hero-actions { gap: 0.4375rem; }
   .hero-actions .button { min-height: 1.6875rem; padding: 0 0.5625rem; gap: 0.25rem; font-size: 0.4375rem; }
   .hero-actions .button svg { width: 0.6875rem; height: 0.6875rem; }
-  .hero-contact-link { font-size: .5rem; }
-  .hero-contact-link svg { width: .625rem; height: .625rem; }
   .differential-grid { min-height: 3.75rem; grid-template-columns: repeat(4,minmax(0,1fr)); padding: 0; }
   .differential-grid div { min-height: 3.75rem; flex-direction: column; gap: 0.1875rem; text-align: center; font-size: 0.5rem; }
   .differential-grid svg { width: 1rem; height: 1rem; }
@@ -224,7 +276,7 @@
   .booking-banner-inner { min-height: 2.6875rem; padding: 0.375rem 0.75rem; gap: 0.5625rem; flex-wrap: nowrap; text-align: left; }
   .booking-banner-inner > svg { width: 1.4375rem; height: 1.4375rem; }
   .booking-banner-inner h2 { font-size: 1.0625rem; }
-  .booking-banner-inner p { display: block; font-size: 0.4375rem; }
+  .booking-banner-copy > p:not(.booking-eyebrow) { display: block; font-size: 0.4375rem; }
   .booking-banner-inner .button { min-height: 1.5625rem; flex: 0 0 auto; padding-inline: 0.5625rem; font-size: 0.4375rem; }
   .contact { gap: .25rem; padding: 0.375rem 0 0.3125rem; }
   .contact-grid { grid-template-columns: 1.1fr .65fr 1.15fr 1.3fr; gap: 0.625rem; min-height: 3.625rem; }
@@ -240,15 +292,14 @@
 @media (max-width: 35rem) {
   .container { width: calc(100% - 2rem); }
   .hero-grid { grid-template-columns: 1fr; }
+  .hero-grid { min-height: 0; }
   .hero-copy { padding: 1.5rem 0.25rem 1.125rem; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions > .button { max-width: 100%; }
-  .hero-contact-link { flex: 0 0 auto; width: max-content; max-width: 100%; justify-content: flex-start; }
   .hero h1 { font-size: 2.25rem; }
   .hero-copy > p:not(.eyebrow) { max-width: 24.375rem; font-size: 0.75rem; }
-  .hero-image { position: relative; inset: auto; right: auto; width: 100%; aspect-ratio: 1.8 / 1; }
-  .hero-image img { object-position: center top; transform-origin: center top; }
-  .hero-contact-link { justify-content: center; font-size: .75rem; }
+  .hero-image { position: relative; inset: auto; right: auto; width: 100%; aspect-ratio: 1312 / 1199; }
+  .hero-image img { object-fit: contain; object-position: right bottom; transform-origin: right bottom; }
   .differential-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0.75rem 0.25rem; padding-block: 0.875rem; }
   .differential-grid div { min-height: 3rem; font-size: 0.6875rem; }
   .section { padding: 1.625rem 0; }
@@ -257,17 +308,26 @@
   .about-copy { max-width: none; text-align: center; }
   .about-copy > p:not(.eyebrow) { font-size: 0.8125rem; }
   .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0.625rem; }
+  .location-grid { grid-template-columns: 1fr; }
+  .location-card { padding: 1rem; }
   .service-card { height: 9.0625rem; }
   .team-grid { grid-template-columns: 1fr; width: min(22.5rem,100%); gap: 0.75rem; }
   .review-grid { grid-template-columns: 1fr; }
+  .review-location-ratings { justify-content: flex-start; }
+  .review-location-ratings > span { flex-wrap: wrap; }
+  .reviews-carousel .review-card { flex-basis: min(88vw, 21rem); }
+  .review-carousel-controls p { max-width: 14rem; }
   .team-card { height: 13.75rem; }
   .testimonial-card { height: auto; grid-template-columns: 1fr; }
   .testimonial-copy { padding: 1rem; text-align: center; }
   .testimonial-card > img { height: 10.625rem; min-height: 0; }
-  .booking-banner-inner { flex-wrap: wrap; justify-content: center; text-align: center; padding: 1rem; }
-  .booking-banner-inner div { flex: 1 1 calc(100% - 3.375rem); text-align: left; }
-  .booking-banner-inner h2 { font-size: 1.4375rem; }
-  .booking-banner-inner .button { flex: 1 1 100%; }
+  .booking-banner-inner { min-height: 0; grid-template-columns: 2.75rem minmax(0,1fr); gap: .875rem; padding: 1rem; text-align: left; }
+  .booking-icon { width: 2.75rem; height: 2.75rem; border-radius: .75rem; }
+  .booking-icon svg { width: 1.375rem; height: 1.375rem; }
+  .booking-banner-copy { grid-column: 2; }
+  .booking-banner-inner h2 { font-size: 1.375rem; }
+  .booking-banner-copy > p:not(.booking-eyebrow) { font-size: .75rem; }
+  .booking-banner-inner .button { grid-column: 1 / -1; width: 100%; min-height: 2.875rem; }
   .contact-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.125rem 0.75rem; }
   .footer-brand { grid-row: auto; }
   .social-links { align-self: start; }
@@ -282,4 +342,84 @@
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* Shared section rhythm and legible tablet sizing. */
+.section { padding-block: var(--section-space); }
+.services.section, .team.section { padding-block: var(--section-space); }
+.booking-banner { padding-block: 2rem; }
+.contact { padding-block: var(--section-space); }
+
+@media (min-width: 35.0625rem) and (max-width: 51.25rem) {
+  :root { --section-space: 1.5rem; }
+  .header { height: 3.75rem; }
+  .header-inner { gap: .75rem; }
+  .logo { min-width: 0; gap: .5rem; }
+  .logo-mark, .logo-mark svg { width: 2rem; height: 2rem; }
+  .logo-copy strong { font-size: 1.5rem; }
+  .logo-copy small { font-size: .4rem; }
+  .menu-button { display: grid; width: 2.75rem; height: 2.75rem; }
+  .header-button { display: none; }
+  .nav { display: none; position: absolute; top: 3.75rem; left: 0; right: 0; padding: .75rem 1.25rem 1rem; flex-direction: column; align-items: stretch; gap: 0; background: var(--ivory); border-bottom: 1px solid #dfd2c5; }
+  .nav.nav-open { display: flex; }
+  .nav a { padding: .8rem .5rem; font-size: .875rem; }
+  .hero-copy { padding: 2.25rem 1.25rem 2.25rem .5rem; gap: .75rem; }
+  .hero-grid { min-height: 23rem; }
+  .hero-copy { padding-block: 2.25rem; }
+  .hero .eyebrow, .about-copy .eyebrow { font-size: .625rem; }
+  .hero h1 { font-size: clamp(2rem, 4.25vw, 2.5rem); }
+  .hero-copy > p:not(.eyebrow) { max-width: 22rem; font-size: .8125rem; line-height: 1.5; }
+  .hero-actions { gap: .5rem; }
+  .hero-actions .button { min-height: 2.5rem; padding-inline: .875rem; font-size: .75rem; }
+  .differential-grid { min-height: 5rem; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: .5rem 0; }
+  .differential-grid div { min-height: 3.5rem; flex-direction: row; gap: .5rem; font-size: .6875rem; }
+  .differential-grid svg { width: 1.25rem; height: 1.25rem; }
+  .about-grid { min-height: 0; grid-template-columns: 1.05fr .95fr; gap: 1.25rem; }
+  .about-image-frame { height: clamp(11rem, 22vw, 14rem); }
+  .about-copy { gap: .5rem; }
+  .about-copy h2, .section-heading h2 { font-size: clamp(1.75rem, 3.2vw, 2.125rem); }
+  .about-copy > p:not(.eyebrow), .section-heading p { font-size: .8125rem; line-height: 1.45; }
+  .about-copy .button { min-height: 2.5rem; padding-inline: .875rem; font-size: .75rem; }
+  .services.section { padding-top: var(--section-space); }
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .875rem; }
+  .service-card { height: clamp(8.5rem, 18vw, 10.5rem); }
+  .service-card button { min-height: 2.75rem; padding: .5rem .75rem; }
+  .service-card button strong { font-size: 1.125rem; }
+  .location-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .875rem; }
+  .location-card { padding: 1.125rem; }
+  .location-actions .button { min-height: 2.5rem; font-size: .75rem; }
+  .review-location-filters button { min-height: 2.5rem; font-size: .8125rem; }
+  .review-location-ratings > span { font-size: .75rem; }
+  .reviews-carousel .review-card { flex-basis: min(19rem, 72vw); }
+  .booking-banner-inner { min-height: 8rem; padding: 1.25rem; gap: 1rem; }
+  .booking-icon { width: 3rem; height: 3rem; }
+  .booking-banner { padding-block: 1.5rem; }
+  .booking-banner-inner h2 { font-size: 1.625rem; }
+  .booking-banner-copy > p:not(.booking-eyebrow) { font-size: .75rem; }
+  .booking-banner-inner .booking-eyebrow { font-size: .625rem; }
+  .booking-banner-inner .button { min-height: 2.5rem; padding-inline: .875rem; font-size: .75rem; }
+  .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+  .footer-brand { grid-column: 1 / -1; grid-row: auto; }
+  .contact-grid h3 { font-size: 1rem; }
+  .contact-grid a, .contact-grid p { font-size: .75rem; }
+  .copyright { font-size: .6875rem; }
+}
+
+@media (max-width: 35rem) {
+  :root { --section-space: 1.5rem; }
+  .services.section { padding-top: var(--section-space); }
+  .about-copy h2, .section-heading h2 { font-size: clamp(1.875rem, 8vw, 2.25rem); }
+  .section-heading p { font-size: .8125rem; line-height: 1.45; }
+  .service-grid { gap: .75rem; }
+  .service-card { height: clamp(8.75rem, 42vw, 11rem); }
+  .location-grid { gap: .875rem; }
+  .review-location-filters { justify-content: flex-start; }
+  .review-carousel-controls { align-items: center; }
+  .review-carousel-controls p { max-width: 13rem; font-size: .75rem; }
+  .reviews-carousel .review-card { flex-basis: min(86vw, 21rem); min-height: 16rem; }
+  .booking-banner { padding-block: 1rem; }
+  .contact-grid { gap: 1.5rem 1rem; }
+  .contact-grid h3 { font-size: 1rem; }
+  .contact-grid a, .contact-grid p { font-size: .75rem; }
+  .copyright { font-size: .6875rem; line-height: 1.4; }
 }
